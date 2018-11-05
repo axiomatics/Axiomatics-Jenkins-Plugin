@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Group-Id: io.jenkins.plugins
+Short-Name: demo
+Long-Name: TODO Plugin
+Plugin-Version: 1.0-SNAPSHOT (private-11/05/2018 14:38-mikegood)
+Hudson-Version: 2.7.3
+Jenkins-Version: 2.7.3
+Plugin-Dependencies: structs:1.7
+Plugin-Developers: Michael C. Good:michaelcgood:michael@michaelcgood.com
+Libraries: /Users/mikegood/Documents/workspace-sts-3.9.4.RELEASE/jenki
+ ns/demo/src/main/resources,/Users/mikegood/Documents/workspace-sts-3.
+ 9.4.RELEASE/jenkins/demo/target/classes,/Users/mikegood/.m2/repositor
+ y/com/axiomatics/asm-soap-admin-client/6.2.7.4137/asm-soap-admin-clie
+ nt-6.2.7.4137.jar,/Users/mikegood/.m2/repository/com/axiomatics/commo
+ ns/2.3/commons-2.3.jar,/Users/mikegood/.m2/repository/com/axiomatics/
+ delegent/5.139/delegent-5.139.jar
+Resource-Path: /Users/mikegood/Documents/workspace-sts-3.9.4.RELEASE/j
+ enkins/demo/src/main/webapp
+

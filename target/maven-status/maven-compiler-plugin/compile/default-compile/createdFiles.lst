@@ -1,0 +1,11 @@
+io/jenkins/plugins/sample/AxiomaticsBuilder$DescriptorImpl.class
+io/jenkins/plugins/sample/UploadPolicy.class
+io/jenkins/plugins/sample/AxiomaticsBuilder.class
+io/jenkins/plugins/sample/AxiomaticsBuilder/DescriptorImpl/doCheckName.stapler
+io/jenkins/plugins/sample/AxiomaticsAction.class
+META-INF/annotations/org.kohsuke.accmod.Restricted
+io/jenkins/plugins/sample/Messages.class
+META-INF/annotations/org.jenkinsci.Symbol
+io/jenkins/plugins/sample/ConvertALFA.class
+io/jenkins/plugins/sample/AxiomaticsBuilder.stapler
+META-INF/annotations/hudson.Extension
