@@ -1,12 +1,13 @@
 Manifest-Version: 1.0
 Group-Id: io.jenkins.plugins
-Short-Name: demo
-Long-Name: TODO Plugin
-Plugin-Version: 1.0-SNAPSHOT (private-11/05/2018 14:38-mikegood)
+Short-Name: axiomatics-plugin
+Long-Name: Axiomatics Policy Plugin
+Plugin-Version: 0.1
 Hudson-Version: 2.7.3
 Jenkins-Version: 2.7.3
 Plugin-Dependencies: structs:1.7
 Plugin-Developers: Michael C. Good:michaelcgood:michael@michaelcgood.com
+Support-Dynamic-Loading: true
 Libraries: /Users/mikegood/Documents/workspace-sts-3.9.4.RELEASE/jenki
  ns/demo/src/main/resources,/Users/mikegood/Documents/workspace-sts-3.
  9.4.RELEASE/jenkins/demo/target/classes,/Users/mikegood/.m2/repositor

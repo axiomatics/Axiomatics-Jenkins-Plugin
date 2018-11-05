@@ -8,7 +8,6 @@ import org.apache.commons.httpclient.HttpException;
 import com.axiomatics.asm.admin.client.AsmAccessDenied_Exception;
 import com.axiomatics.asm.admin.client.AsmWebServiceFault_Exception;
 
-import hudson.model.Action;
 import hudson.model.Run;
 import jenkins.model.RunAction2;
 
@@ -51,16 +50,12 @@ public class AxiomaticsAction implements RunAction2 {
 		try {
 			uploadPolicy.setParameters(policyPackage.getAbsolutePath());
 		} catch (HttpException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (AsmAccessDenied_Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (AsmWebServiceFault_Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

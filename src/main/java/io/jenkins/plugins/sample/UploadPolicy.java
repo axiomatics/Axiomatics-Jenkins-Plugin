@@ -18,7 +18,7 @@ import com.axiomatics.asm.client.ClientInfo;
 public class UploadPolicy {
 
 	// This needs to be the ASM URL of your ASM
-	private String asmUrl = "https://ec2-34-207-78-79.compute-1.amazonaws.com:8443/asm/";
+	private String asmUrl = "https://your-asm-url:8443/asm/";
 	
 	// Your ASM login
 	private String user = "asm-admin";
@@ -36,24 +36,21 @@ public class UploadPolicy {
 	private String trustStorePassword = "changeit";
 	
 	// Your WSDL URL
-	private String wsdlUrl = "https://ec2-34-207-78-79.compute-1.amazonaws.com:8443/asm/admin?wsdl";
+	private String wsdlUrl = "https://your-wsdl-url-for-asm:8443/asm/admin?wsdl";
 	
 	// Your domain name
 	private String domainName = "TutorialDomain";
 	
-	// Your policyfile zip location
-	//private String policyFile = "/Users/mikegood/Documents/jenkinscotent/Tutorial.zip";
-	
 	// Your project name
 	private String projectName = "TutorialProject";
 
-	// Consider adding parameters for strings above
+	// Default constructor
 	public UploadPolicy() {
 
 	}
 	
 
-	// Set all the connection parameters
+	// Method for uploading...
 	public String setParameters(String policyFile)
 			throws HttpException, AsmAccessDenied_Exception, AsmWebServiceFault_Exception, IOException {
 

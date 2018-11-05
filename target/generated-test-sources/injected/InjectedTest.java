@@ -6,10 +6,10 @@ import java.util.*;
  */
 public class InjectedTest extends junit.framework.TestCase {
   public static junit.framework.Test suite() throws Exception {
-    System.out.println("Running tests for "+"io.jenkins.plugins:demo:1.0-SNAPSHOT");
+    System.out.println("Running tests for "+"io.jenkins.plugins:axiomatics-plugin:0.1");
     Map<String, Object> parameters = new HashMap<String, Object>();
     parameters.put("basedir","/Users/mikegood/Documents/workspace-sts-3.9.4.RELEASE/jenkins/demo");
-    parameters.put("artifactId","demo");
+    parameters.put("artifactId","axiomatics-plugin");
     parameters.put("packaging","hpi");
     parameters.put("outputDirectory","/Users/mikegood/Documents/workspace-sts-3.9.4.RELEASE/jenkins/demo/target/classes");
     parameters.put("testOutputDirectory","/Users/mikegood/Documents/workspace-sts-3.9.4.RELEASE/jenkins/demo/target/test-classes");

@@ -2,9 +2,7 @@ package io.jenkins.plugins.sample;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.FilenameFilter;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 public class ConvertALFA {
@@ -28,7 +26,6 @@ public class ConvertALFA {
 		for (File f : files) {
 			// If the file is not a folder and it is not the main policy
 			if (f.isFile() && f.getAbsolutePath().equals(mainPolicy.getAbsolutePath()) == false) {
-				// TODO: Check if the file has .xml extension
 				addZipEntry("referenceable/" + f.getName(), f, zip);
 			}
 		}
@@ -59,24 +56,17 @@ public class ConvertALFA {
 		 * mainPolicy
 		 * 
 		 * This is the policy file that is the root "entry point" to the policy package
-		 * mainPolicy =
-		 * /Users/mgood/Documents/workspace/Demos/Collaboration/src-gen/demo.policies.
-		 * main.xml
 		 *
 		 */
 
 		/*
 		 * policyFolder
 		 * This is the directory that contains all of the other policy files
-		 * policyFolder = /Users/mgood/Documents/workspace/Demos/Collaboration/src-gen
-		 * 
 		 */
 	
 		/*
 		 * destPackage
 		 * This is the name and path of the policy package to be created destPackage =
-		 * /Users/mgood/Documents/workspace/Demos/Collaboration/policy.zip
-		 * 
 		 */
 		
 		File policyPackage = null;
