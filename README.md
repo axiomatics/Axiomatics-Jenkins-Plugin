@@ -5,7 +5,7 @@ ALFA or regular XACML - with Jenkins.
 
 Please note that this software is currently in Alpha and your feedback about improving this software is very much appreciated.
 
-NOTE: This plugin is **not** an official Axiomatics release and is my own personal development.
+IMPORTANT: This plugin is **not** an official Axiomatics release and is my own personal development.
 
 ## Current Features
 
