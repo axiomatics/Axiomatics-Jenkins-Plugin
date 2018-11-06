@@ -25,3 +25,6 @@ works with deployment.
 ## Want to help?
 
 Contributors are very welcome! I look forward to your pull request. Questions? Please contact me at mgood@axiomatics.com. 
+
+## Special Thanks
+Special thanks to David Brossard, Andrés Martinelli, and Jonas Iggbom, as some of the code is or is directly derived from their work. 
