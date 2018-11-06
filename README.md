@@ -1,9 +1,11 @@
 # Axiomatics-Plugin-Jenkins
 
 This software is the beginning of an effort to integrate policy development - whether in
-ALFA or regular XACML - with Jenkins.
+ALFA or regular XACML - with Jenkins. 
 
-Please note that this software is currently in Alpha and your feedback about improving this software is very much appreciated. 
+Please note that this software is currently in Alpha and your feedback about improving this software is very much appreciated.
+
+NOTE: This plugin is **not** an official Axiomatics release and is my own personal development.
 
 ## Current Features
 
