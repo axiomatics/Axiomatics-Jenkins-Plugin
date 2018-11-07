@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fingerprint>
+  <timestamp>2018-11-06 20:23:35.751 UTC</timestamp>
+  <md5sum>70bb2caf5d53d0e057d46ffcfc264155</md5sum>
+  <fileName>Credential id=b78895af-31fb-4aee-82bc-f389cda3ce20 name=michaelcgood/******</fileName>
+  <usages>
+    <entry>
+      <string>hello1</string>
+      <ranges>7-16</ranges>
+    </entry>
+  </usages>
+  <facets/>
+</fingerprint>

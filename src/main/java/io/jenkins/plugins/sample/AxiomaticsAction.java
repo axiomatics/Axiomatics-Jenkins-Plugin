@@ -4,12 +4,15 @@ import java.io.File;
 import java.io.IOException;
 
 import org.apache.commons.httpclient.HttpException;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
 import com.axiomatics.asm.admin.client.AsmAccessDenied_Exception;
 import com.axiomatics.asm.admin.client.AsmWebServiceFault_Exception;
 
 import hudson.model.Run;
 import jenkins.model.RunAction2;
+
 
 public class AxiomaticsAction implements RunAction2 {
 	
@@ -39,7 +42,7 @@ public class AxiomaticsAction implements RunAction2 {
 		this.name = name;
 	}
 
-	public AxiomaticsAction(String name) {
+	public AxiomaticsAction(String name, String asmURL) {
 		this.name = name;
 		ConvertALFA convertALFA = new ConvertALFA();
 		File mainPolicy = new File("/Users/mikegood/Documents/ALFA-Jenkins-Repo/Tutorial/src-gen/tutorial.main.xml");
@@ -48,7 +51,7 @@ public class AxiomaticsAction implements RunAction2 {
 		File policyPackage = convertALFA.doThePackaging(mainPolicy, policyFolder, destPackage);
 		UploadPolicy uploadPolicy = new UploadPolicy();
 		try {
-			uploadPolicy.setParameters(policyPackage.getAbsolutePath());
+			uploadPolicy.setParameters(policyPackage.getAbsolutePath(), asmURL);
 		} catch (HttpException e) {
 			e.printStackTrace();
 		} catch (AsmAccessDenied_Exception e) {

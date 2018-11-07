@@ -1,9 +1,26 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <project>
+  <actions/>
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties/>
-  <scm class="hudson.scm.NullSCM"/>
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.9.1">
+    <configVersion>2</configVersion>
+    <userRemoteConfigs>
+      <hudson.plugins.git.UserRemoteConfig>
+        <url>https://github.com/michaelcgood/Tutorial.git</url>
+        <credentialsId>b78895af-31fb-4aee-82bc-f389cda3ce20</credentialsId>
+      </hudson.plugins.git.UserRemoteConfig>
+    </userRemoteConfigs>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>*/master</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <submoduleCfg class="list"/>
+    <extensions/>
+  </scm>
   <canRoam>true</canRoam>
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
@@ -12,8 +29,11 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <io.jenkins.plugins.sample.AxiomaticsBuilder plugin="demo@1.0-SNAPSHOT">
-      <name>helloStep1</name>
+      <name>Mike</name>
       <useFrench>false</useFrench>
+      <asmURL>https://ec2-34-207-78-79.compute-1.amazonaws.com:8443/asm</asmURL>
+      <wsdlURL></wsdlURL>
+      <asmUser></asmUser>
     </io.jenkins.plugins.sample.AxiomaticsBuilder>
   </builders>
   <publishers/>

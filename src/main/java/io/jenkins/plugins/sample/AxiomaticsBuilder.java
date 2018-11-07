@@ -22,10 +22,28 @@ public class AxiomaticsBuilder extends Builder implements SimpleBuildStep {
 
     private final String name;
     private boolean useFrench;
+    private final String asmURL;
+    private final String wsdlURL;
+    private final String asmUser;
 
-    @DataBoundConstructor
-    public AxiomaticsBuilder(String name) {
+    public String getAsmUser() {
+		return asmUser;
+	}
+
+	public String getWsdlURL() {
+		return wsdlURL;
+	}
+
+	public String getAsmURL() {
+		return asmURL;
+	}
+
+	@DataBoundConstructor
+    public AxiomaticsBuilder(String name, String asmURL, String wsdlURL, String asmUser) {
         this.name = name;
+        this.asmURL = asmURL;
+        this.wsdlURL = wsdlURL;
+        this.asmUser = asmUser;
     }
 
     public String getName() {
@@ -43,11 +61,14 @@ public class AxiomaticsBuilder extends Builder implements SimpleBuildStep {
 
     @Override
     public void perform(Run<?, ?> run, FilePath workspace, Launcher launcher, TaskListener listener) throws InterruptedException, IOException {
-    	run.addAction(new AxiomaticsAction(name));
+    	
+    	run.addAction(new AxiomaticsAction(name, asmURL));
         if (useFrench) {
             listener.getLogger().println("Bonjour, " + name + "!");
         } else {
             listener.getLogger().println("Hello, " + name + "!");
+            listener.getLogger().println("Your ASM URL: " + asmURL + "!");
+            listener.getLogger().println("Your WSDL URL: " + wsdlURL + "!");
         }
     }
 

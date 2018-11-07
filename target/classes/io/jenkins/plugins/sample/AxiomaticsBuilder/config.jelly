@@ -3,6 +3,19 @@
     <f:entry title="${%Name}" field="name">
         <f:textbox />
     </f:entry>
+      <f:entry title="${%ASM URL}" field="asmURL">
+        <f:textbox />
+    </f:entry>
+    
+    <f:entry title="${%WSDL URL}" field="wsdlURL">
+        <f:textbox />
+    </f:entry>
+    
+     <f:entry title="${%ASM User}" field="asmUser">
+        <f:textbox />
+    </f:entry>
+    
+    
     <f:advanced>
         <f:entry title="${%French}" field="useFrench"
                  description="${%FrenchDescr}">

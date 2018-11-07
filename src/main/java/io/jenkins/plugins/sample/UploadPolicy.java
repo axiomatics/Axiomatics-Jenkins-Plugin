@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 import org.apache.commons.httpclient.HttpException;
+
 import com.axiomatics.asm.admin.client.AsmAccessDenied_Exception;
 import com.axiomatics.asm.admin.client.AsmAdminService;
 import com.axiomatics.asm.admin.client.AsmWebServiceFault_Exception;
@@ -16,10 +17,8 @@ import com.axiomatics.asm.client.ClientInfo;
 
 
 public class UploadPolicy {
-
-	// This needs to be the ASM URL of your ASM
-	private String asmUrl = "https://your-asm-url:8443/asm/";
 	
+
 	// Your ASM login
 	private String user = "asm-admin";
 	
@@ -36,7 +35,7 @@ public class UploadPolicy {
 	private String trustStorePassword = "changeit";
 	
 	// Your WSDL URL
-	private String wsdlUrl = "https://your-wsdl-url-for-asm:8443/asm/admin?wsdl";
+	private String wsdlUrl = "https://ec2-34-207-78-79.compute-1.amazonaws.com:8443/asm/admin?wsdl";
 	
 	// Your domain name
 	private String domainName = "TutorialDomain";
@@ -51,11 +50,13 @@ public class UploadPolicy {
 	
 
 	// Method for uploading...
-	public String setParameters(String policyFile)
+	public String setParameters(String policyFile, String asmURL)
 			throws HttpException, AsmAccessDenied_Exception, AsmWebServiceFault_Exception, IOException {
-
+		
+		
+		//System.out.println("Here is the content of axiomaticsBuilder.getAsmURL() =" + axiomaticsBuilder.getAsmURL() );
 		// Set all the ASM runtime parameters
-		ClientInfo clientInfo = new ClientInfo(asmUrl);
+		ClientInfo clientInfo = new ClientInfo(asmURL);
 		clientInfo.setUser(user);
 		clientInfo.setWsdlUrl(wsdlUrl);
 		clientInfo.setPassword(password);

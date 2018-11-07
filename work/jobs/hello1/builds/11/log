@@ -1,0 +1,38 @@
+Started by user [8mha:AAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
+Building in workspace /Users/mikegood/Documents/workspace-sts-3.9.4.RELEASE/jenkins/demo/work/jobs/hello1/workspace
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/michaelcgood/Tutorial.git # timeout=10
+Fetching upstream changes from https://github.com/michaelcgood/Tutorial.git
+ > git --version # timeout=10
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --progress https://github.com/michaelcgood/Tutorial.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 56c2310117b2037ca09bfc768cedfe72aa4d256d (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 56c2310117b2037ca09bfc768cedfe72aa4d256d
+Commit message: "Update README.md"
+ > git rev-list --no-walk 56c2310117b2037ca09bfc768cedfe72aa4d256d # timeout=10
+FATAL: org/springframework/context/annotation/AnnotationConfigApplicationContext
+[8mha:AAAAWB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P08vOT+vOD8nVc8DzHWtSE4tKMnMz/PLL0ldFVf2c+b/lb5MDAwVRQxSaBqcITRIIQMEMIIUFgAAckCEiWAAAAA=[0mjava.lang.NoClassDefFoundError: org/springframework/context/annotation/AnnotationConfigApplicationContext
+	at io.jenkins.plugins.sample.UploadPolicy.setParameters(UploadPolicy.java:64)
+	at io.jenkins.plugins.sample.AxiomaticsAction.<init>(AxiomaticsAction.java:54)
+	at io.jenkins.plugins.sample.AxiomaticsBuilder.perform(AxiomaticsBuilder.java:67)
+	at hudson.tasks.BuildStepCompatibilityLayer.perform(BuildStepCompatibilityLayer.java:78)
+	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:779)
+	at hudson.model.Build$BuildExecution.build(Build.java:205)
+	at hudson.model.Build$BuildExecution.doRun(Build.java:162)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.run(AbstractBuild.java:534)
+	at hudson.model.Run.execute(Run.java:1741)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:98)
+	at hudson.model.Executor.run(Executor.java:410)
+Caused by: java.lang.ClassNotFoundException: org.springframework.context.annotation.AnnotationConfigApplicationContext
+	at jenkins.util.AntClassLoader.findClassInComponents(AntClassLoader.java:1376)
+	at jenkins.util.AntClassLoader.findClass(AntClassLoader.java:1326)
+	at jenkins.util.AntClassLoader.loadClass(AntClassLoader.java:1079)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 13 more
+Finished: FAILURE
