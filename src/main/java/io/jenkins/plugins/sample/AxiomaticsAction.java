@@ -4,8 +4,6 @@ import java.io.File;
 import java.io.IOException;
 
 import org.apache.commons.httpclient.HttpException;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 
 import com.axiomatics.asm.admin.client.AsmAccessDenied_Exception;
 import com.axiomatics.asm.admin.client.AsmWebServiceFault_Exception;
