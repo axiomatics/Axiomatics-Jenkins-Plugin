@@ -14,10 +14,10 @@ When you add the Axiomatics Policy Deployment Build Step to a project, these fea
 - ASM URL
 - WSDL URL
 - ASM User
-- ASM Password (thoughts on improving security are welcome)
+- ASM Password 
 - Truststore
 - Truststore type
-- Truststore password (same thing on security)
+- Truststore password
 - Domain name
 - Project name
 
@@ -25,7 +25,6 @@ The policy to be packaged and deployed is still hardcoded policy in Java.
 
 ## Upcoming Features
 
-- Parameterized input for your build through Jenkins
 - Git integration
 
 ## Notes
