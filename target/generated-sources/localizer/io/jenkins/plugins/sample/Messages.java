@@ -70,22 +70,22 @@ public class Messages {
     }
 
     /**
-     * Key {@code AxiomaticsBuilder.DescriptorImpl.DisplayName}: {@code Say
-     * hello world}.
+     * Key {@code AxiomaticsBuilder.DescriptorImpl.DisplayName}: {@code
+     * Axiomatics Policy Deployment}.
      * 
      * @return
-     *     {@code Say hello world}
+     *     {@code Axiomatics Policy Deployment}
      */
     public static String AxiomaticsBuilder_DescriptorImpl_DisplayName() {
         return holder.format("AxiomaticsBuilder.DescriptorImpl.DisplayName");
     }
 
     /**
-     * Key {@code AxiomaticsBuilder.DescriptorImpl.DisplayName}: {@code Say
-     * hello world}.
+     * Key {@code AxiomaticsBuilder.DescriptorImpl.DisplayName}: {@code
+     * Axiomatics Policy Deployment}.
      * 
      * @return
-     *     {@code Say hello world}
+     *     {@code Axiomatics Policy Deployment}
      */
     public static Localizable _AxiomaticsBuilder_DescriptorImpl_DisplayName() {
         return new Localizable(holder, "AxiomaticsBuilder.DescriptorImpl.DisplayName");

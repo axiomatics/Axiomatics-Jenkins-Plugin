@@ -1,2 +1,2 @@
-#Wed Nov 07 20:37:36 EST 2018
-constructor=name,asmURL,wsdlURL,asmUser
+#Wed Nov 07 21:42:55 EST 2018
+constructor=name,asmURL,wsdlURL,asmUser,asmPassword,trustStore,trustStoreType,trustStorePassword,domainName,projectName

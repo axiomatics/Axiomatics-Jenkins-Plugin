@@ -20,13 +20,43 @@ import org.kohsuke.stapler.DataBoundSetter;
 
 public class AxiomaticsBuilder extends Builder implements SimpleBuildStep {
 
-    private final String name;
-    private boolean useFrench;
-    private final String asmURL;
-    private final String wsdlURL;
-    private final String asmUser;
+	private final String name;
+	private boolean useFrench;
+	private final String asmURL;
+	private final String wsdlURL;
+	private final String asmUser;
+	private final String asmPassword;
+	private final String trustStore;
+	private final String trustStoreType;
+	private final String trustStorePassword;
+	private final String domainName;
+	private final String projectName;
 
-    public String getAsmUser() {
+	public String getProjectName() {
+		return projectName;
+	}
+
+	public String getDomainName() {
+		return domainName;
+	}
+
+	public String getTrustStorePassword() {
+		return trustStorePassword;
+	}
+
+	public String getTrustStoreType() {
+		return trustStoreType;
+	}
+
+	public String getTrustStore() {
+		return trustStore;
+	}
+
+	public String getAsmPassword() {
+		return asmPassword;
+	}
+
+	public String getAsmUser() {
 		return asmUser;
 	}
 
@@ -39,65 +69,74 @@ public class AxiomaticsBuilder extends Builder implements SimpleBuildStep {
 	}
 
 	@DataBoundConstructor
-    public AxiomaticsBuilder(String name, String asmURL, String wsdlURL, String asmUser) {
-        this.name = name;
-        this.asmURL = asmURL;
-        this.wsdlURL = wsdlURL;
-        this.asmUser = asmUser;
-    }
+	public AxiomaticsBuilder(String name, String asmURL, String wsdlURL, String asmUser, String asmPassword,
+			String trustStore, String trustStoreType, String trustStorePassword, String domainName, String projectName) {
+		this.name = name;
+		this.asmURL = asmURL;
+		this.wsdlURL = wsdlURL;
+		this.asmUser = asmUser;
+		this.asmPassword = asmPassword;
+		this.trustStore = trustStore;
+		this.trustStoreType = trustStoreType;
+		this.trustStorePassword = trustStorePassword;
+		this.domainName = domainName;
+		this.projectName = projectName;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public boolean isUseFrench() {
-        return useFrench;
-    }
+	public boolean isUseFrench() {
+		return useFrench;
+	}
 
-    @DataBoundSetter
-    public void setUseFrench(boolean useFrench) {
-        this.useFrench = useFrench;
-    }
+	@DataBoundSetter
+	public void setUseFrench(boolean useFrench) {
+		this.useFrench = useFrench;
+	}
 
-    @Override
-    public void perform(Run<?, ?> run, FilePath workspace, Launcher launcher, TaskListener listener) throws InterruptedException, IOException {
-    	
-    	run.addAction(new AxiomaticsAction(name, asmURL, wsdlURL, asmUser));
-        if (useFrench) {
-            listener.getLogger().println("Bonjour, " + name + "!");
-        } else {
-            listener.getLogger().println("Hello, " + name + "!");
-            listener.getLogger().println("Your ASM URL: " + asmURL + "!");
-            listener.getLogger().println("Your WSDL URL: " + wsdlURL + "!");
-        }
-    }
+	@Override
+	public void perform(Run<?, ?> run, FilePath workspace, Launcher launcher, TaskListener listener)
+			throws InterruptedException, IOException {
 
-    @Symbol("greet")
-    @Extension
-    public static final class DescriptorImpl extends BuildStepDescriptor<Builder> {
+		run.addAction(new AxiomaticsAction(name, asmURL, wsdlURL, asmUser, asmPassword, trustStore, trustStoreType,
+				trustStorePassword, domainName, projectName));
+		if (useFrench) {
+			listener.getLogger().println("Bonjour, " + name + "!");
+		} else {
+			listener.getLogger().println("Hello, " + name + "!");
+			listener.getLogger().println("Your ASM URL: " + asmURL + "!");
+			listener.getLogger().println("Your WSDL URL: " + wsdlURL + "!");
+		}
+	}
 
-        public FormValidation doCheckName(@QueryParameter String value, @QueryParameter boolean useFrench)
-                throws IOException, ServletException {
-            if (value.length() == 0)
-                return FormValidation.error(Messages.AxiomaticsBuilder_DescriptorImpl_errors_missingName());
-            if (value.length() < 4)
-                return FormValidation.warning(Messages.AxiomaticsBuilder_DescriptorImpl_warnings_tooShort());
-            if (!useFrench && value.matches(".*[éáàç].*")) {
-                return FormValidation.warning(Messages.AxiomaticsBuilder_DescriptorImpl_warnings_reallyFrench());
-            }
-            return FormValidation.ok();
-        }
+	@Symbol("greet")
+	@Extension
+	public static final class DescriptorImpl extends BuildStepDescriptor<Builder> {
 
-        @Override
-        public boolean isApplicable(Class<? extends AbstractProject> aClass) {
-            return true;
-        }
+		public FormValidation doCheckName(@QueryParameter String value, @QueryParameter boolean useFrench)
+				throws IOException, ServletException {
+			if (value.length() == 0)
+				return FormValidation.error(Messages.AxiomaticsBuilder_DescriptorImpl_errors_missingName());
+			if (value.length() < 4)
+				return FormValidation.warning(Messages.AxiomaticsBuilder_DescriptorImpl_warnings_tooShort());
+			if (!useFrench && value.matches(".*[éáàç].*")) {
+				return FormValidation.warning(Messages.AxiomaticsBuilder_DescriptorImpl_warnings_reallyFrench());
+			}
+			return FormValidation.ok();
+		}
 
-        @Override
-        public String getDisplayName() {
-            return Messages.AxiomaticsBuilder_DescriptorImpl_DisplayName();
-        }
+		@Override
+		public boolean isApplicable(Class<? extends AbstractProject> aClass) {
+			return true;
+		}
 
-    }
+		@Override
+		public String getDisplayName() {
+			return Messages.AxiomaticsBuilder_DescriptorImpl_DisplayName();
+		}
+
+	}
 
 }

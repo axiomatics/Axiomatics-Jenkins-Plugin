@@ -15,6 +15,29 @@
         <f:textbox />
     </f:entry>
     
+     <f:entry title="${%ASM Password}" field="asmPassword">
+        <f:textbox />
+    </f:entry>
+    
+      <f:entry title="${%trustStore}" field="trustStore">
+        <f:textbox />
+    </f:entry>
+    
+      <f:entry title="${%trustStore type}" field="trustStoreType">
+        <f:textbox />
+    </f:entry>
+    
+     <f:entry title="${%trustStore Password}" field="trustStorePassword">
+        <f:textbox />
+    </f:entry>
+    
+    <f:entry title="${%Domain Name}" field="domainName">
+        <f:textbox />
+    </f:entry>
+    
+    <f:entry title="${%Project Name}" field="projectName">
+        <f:textbox />
+    </f:entry>
     
     <f:advanced>
         <f:entry title="${%French}" field="useFrench"

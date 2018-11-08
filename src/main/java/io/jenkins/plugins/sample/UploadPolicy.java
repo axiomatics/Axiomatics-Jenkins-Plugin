@@ -18,30 +18,11 @@ import com.axiomatics.asm.client.ClientInfo;
 
 public class UploadPolicy {
 	
-
-	// Your ASM login
-	//private String user = "asm-admin";
-	
-	// Your ASM password
-	private String password = "password";
-	
-	// Your truststore path
-	private String trustStore = "/Users/mikegood/Documents/jenkinscotent/keystore.jks";
-	
-	// Your truststore type
-	private String trustStoreType = "jks";
-	
-	// Your truststore password
-	private String trustStorePassword = "changeit";
-	
-	// Your WSDL URL
-	//private String wsdlUrl = "https://ec2-34-207-78-79.compute-1.amazonaws.com:8443/asm/admin?wsdl";
-	
 	// Your domain name
-	private String domainName = "TutorialDomain";
+	//private String domainName = "TutorialDomain";
 	
 	// Your project name
-	private String projectName = "TutorialProject";
+	//private String projectName = "TutorialProject";
 
 	// Default constructor
 	public UploadPolicy() {
@@ -50,7 +31,8 @@ public class UploadPolicy {
 	
 
 	// Method for uploading...
-	public String setParameters(String policyFile, String asmURL, String wsdlURL, String asmUser)
+	public String setParameters(String policyFile, String asmURL, String wsdlURL, String asmUser, String asmPassword,
+			String trustStore, String trustStoreType, String trustStorePassword, String domainName, String projectName)
 			throws HttpException, AsmAccessDenied_Exception, AsmWebServiceFault_Exception, IOException {
 		
 		
@@ -59,7 +41,7 @@ public class UploadPolicy {
 		ClientInfo clientInfo = new ClientInfo(asmURL);
 		clientInfo.setUser(asmUser);
 		clientInfo.setWsdlUrl(wsdlURL);
-		clientInfo.setPassword(password);
+		clientInfo.setPassword(asmPassword);
 		clientInfo.setTrustStoreType(trustStoreType);
 		clientInfo.setTrustStore(trustStore);
 		clientInfo.setTrustStorePassword(trustStorePassword);

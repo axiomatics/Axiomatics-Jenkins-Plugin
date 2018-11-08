@@ -8,7 +8,7 @@
 # exception to the rule
 !Download metadata.log
 
-builds/*
+/work/jobs/hello1/builds/*
 !1 
 
 
