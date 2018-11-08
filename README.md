@@ -9,10 +9,19 @@ IMPORTANT: This plugin is **not** an official Axiomatics release and is my own p
 
 ## Current Features
 
-Currently, the values are hardcoded, but:
+When you add the Axiomatics Policy Deployment Build Step to a project, these features can now be added there in GUI:
 
-- Build with Action that compiles policy in ALFA or XACML, packages it, and deploys it
-to your Axiomatics Services Manager.
+- ASM URL
+- WSDL URL
+- ASM User
+- ASM Password (thoughts on improving security are welcome)
+- Truststore
+- Truststore type
+- Truststore password (same thing on security)
+- Domain name
+- Project name
+
+The policy to be packaged and deployed is still hardcoded policy in Java.
 
 ## Upcoming Features
 
