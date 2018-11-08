@@ -62,7 +62,7 @@ public class AxiomaticsBuilder extends Builder implements SimpleBuildStep {
     @Override
     public void perform(Run<?, ?> run, FilePath workspace, Launcher launcher, TaskListener listener) throws InterruptedException, IOException {
     	
-    	run.addAction(new AxiomaticsAction(name, asmURL));
+    	run.addAction(new AxiomaticsAction(name, asmURL, wsdlURL, asmUser));
         if (useFrench) {
             listener.getLogger().println("Bonjour, " + name + "!");
         } else {

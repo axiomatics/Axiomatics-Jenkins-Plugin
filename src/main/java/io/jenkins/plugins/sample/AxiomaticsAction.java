@@ -42,7 +42,7 @@ public class AxiomaticsAction implements RunAction2 {
 		this.name = name;
 	}
 
-	public AxiomaticsAction(String name, String asmURL) {
+	public AxiomaticsAction(String name, String asmURL, String wsdlURL, String asmUser) {
 		this.name = name;
 		ConvertALFA convertALFA = new ConvertALFA();
 		File mainPolicy = new File("/Users/mikegood/Documents/ALFA-Jenkins-Repo/Tutorial/src-gen/tutorial.main.xml");
@@ -51,7 +51,7 @@ public class AxiomaticsAction implements RunAction2 {
 		File policyPackage = convertALFA.doThePackaging(mainPolicy, policyFolder, destPackage);
 		UploadPolicy uploadPolicy = new UploadPolicy();
 		try {
-			uploadPolicy.setParameters(policyPackage.getAbsolutePath(), asmURL);
+			uploadPolicy.setParameters(policyPackage.getAbsolutePath(), asmURL, wsdlURL, asmUser);
 		} catch (HttpException e) {
 			e.printStackTrace();
 		} catch (AsmAccessDenied_Exception e) {

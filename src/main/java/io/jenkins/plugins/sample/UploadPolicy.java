@@ -20,7 +20,7 @@ public class UploadPolicy {
 	
 
 	// Your ASM login
-	private String user = "asm-admin";
+	//private String user = "asm-admin";
 	
 	// Your ASM password
 	private String password = "password";
@@ -35,7 +35,7 @@ public class UploadPolicy {
 	private String trustStorePassword = "changeit";
 	
 	// Your WSDL URL
-	private String wsdlUrl = "https://ec2-34-207-78-79.compute-1.amazonaws.com:8443/asm/admin?wsdl";
+	//private String wsdlUrl = "https://ec2-34-207-78-79.compute-1.amazonaws.com:8443/asm/admin?wsdl";
 	
 	// Your domain name
 	private String domainName = "TutorialDomain";
@@ -50,15 +50,15 @@ public class UploadPolicy {
 	
 
 	// Method for uploading...
-	public String setParameters(String policyFile, String asmURL)
+	public String setParameters(String policyFile, String asmURL, String wsdlURL, String asmUser)
 			throws HttpException, AsmAccessDenied_Exception, AsmWebServiceFault_Exception, IOException {
 		
 		
 		//System.out.println("Here is the content of axiomaticsBuilder.getAsmURL() =" + axiomaticsBuilder.getAsmURL() );
 		// Set all the ASM runtime parameters
 		ClientInfo clientInfo = new ClientInfo(asmURL);
-		clientInfo.setUser(user);
-		clientInfo.setWsdlUrl(wsdlUrl);
+		clientInfo.setUser(asmUser);
+		clientInfo.setWsdlUrl(wsdlURL);
 		clientInfo.setPassword(password);
 		clientInfo.setTrustStoreType(trustStoreType);
 		clientInfo.setTrustStore(trustStore);

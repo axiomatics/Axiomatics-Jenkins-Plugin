@@ -32,8 +32,8 @@
       <name>Mike</name>
       <useFrench>false</useFrench>
       <asmURL>https://ec2-34-207-78-79.compute-1.amazonaws.com:8443/asm</asmURL>
-      <wsdlURL></wsdlURL>
-      <asmUser></asmUser>
+      <wsdlURL>https://ec2-34-207-78-79.compute-1.amazonaws.com:8443/asm/admin?wsdl</wsdlURL>
+      <asmUser>asm-admin</asmUser>
     </io.jenkins.plugins.sample.AxiomaticsBuilder>
   </builders>
   <publishers/>
